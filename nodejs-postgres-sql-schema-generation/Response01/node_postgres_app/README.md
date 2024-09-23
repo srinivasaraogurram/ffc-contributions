@@ -65,10 +65,11 @@ VALUES
 ## Join Query to Fetch Users and Their Posts
 ```
 -- Fetch users and their related posts
-SELECT u.id AS user_id, u.name AS user_name, u.email, u.createdAt AS user_createdAt, u.updatedAt AS user_updatedAt,
-       p.id AS post_id, p.title, p.content, p.createdAt AS post_createdAt, p.updatedAt AS post_updatedAt
+-- Fetch users and their related posts
+SELECT u.id AS user_id, u.name AS user_name, u.email, u."createdAt" AS user_createdAt, u."updatedAt" AS user_updatedAt,
+       p.id AS post_id, p.title, p.content, p."createdAt" AS post_createdAt, p."updatedAt" AS post_updatedAt
 FROM users u
-LEFT JOIN posts p ON u.id = p.user_id
+LEFT JOIN posts p ON u.id = p.id
 ORDER BY u.id, p.id;
 
 ```
