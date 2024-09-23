@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-postgres-app",
+  "version": "1.0.0",
+  "description": "NodeJS app with PostgreSQL using models",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "pg": "^8.7.1"
+  }
+}

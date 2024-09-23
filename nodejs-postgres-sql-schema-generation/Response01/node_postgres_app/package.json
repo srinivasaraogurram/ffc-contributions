@@ -1,0 +1,14 @@
+
+{
+  "name": "node_postgres_app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "sequelize": "^6.3.5",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3"
+  }
+}
