@@ -1,6 +1,6 @@
 const { connect } = require('./utils/db');
-const User = require('./models/user');
-const Post = require('./models/post');
+const User = require('./models/User');
+const Post = require('./models/Post');
 
 (async () => {
     try {
