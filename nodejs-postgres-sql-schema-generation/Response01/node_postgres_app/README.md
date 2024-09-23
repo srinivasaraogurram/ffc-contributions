@@ -47,3 +47,30 @@ npm start
 
 - **User**: One-to-Many relationship with `Post`.
 - **Post**: Belongs to `User`.
+
+## SQL Queries with Escaped Characters
+```
+-- Insert users
+INSERT INTO users (name, email, createdAt, updatedAt)
+VALUES 
+('Alice Johnson', 'alice@example.com', NOW(), NOW()),
+('Bob Smith', 'bob@example.com', NOW(), NOW());
+
+-- Insert posts
+INSERT INTO posts (title, content, user_id, createdAt, updatedAt)
+VALUES 
+('Alice''s First Post', 'This is Alice''s first post content.', 1, NOW(), NOW()),
+('Bob''s First Post', 'This is Bob''s first post content.', 2, NOW(), NOW());
+````
+## Join Query to Fetch Users and Their Posts
+```
+-- Fetch users and their related posts
+SELECT u.id AS user_id, u.name AS user_name, u.email, u.createdAt AS user_createdAt, u.updatedAt AS user_updatedAt,
+       p.id AS post_id, p.title, p.content, p.createdAt AS post_createdAt, p.updatedAt AS post_updatedAt
+FROM users u
+LEFT JOIN posts p ON u.id = p.user_id
+ORDER BY u.id, p.id;
+
+```
+
+
