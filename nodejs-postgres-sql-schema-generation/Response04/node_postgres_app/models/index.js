@@ -5,6 +5,8 @@ import  {readdirSync}  from "fs";
 import { resolve } from 'path';
 import path  from "path";
 import Sequelize, { DataTypes } from "sequelize";
+const env = process.env.NODE_ENV || 'test';
+const dbConfig = config[env];
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -17,10 +19,10 @@ let configDB = {
   port: "5432",
 };
 
-var sequelize = new Sequelize(configDB.name, configDB.user, configDB.pwd, {
-  host: configDB.host,
-  port: configDB.port,
-  dialect: configDB.dialect,
+var sequelize = new Sequelize(dbConfig.dbname, dbConfig.user, dbConfig.pwd, {
+  host: dbConfig.host,
+  port: dbConfig.port,
+  dialect: dbConfig.dialect,
   dialectOptions: {
     ssl: {
       require: true,

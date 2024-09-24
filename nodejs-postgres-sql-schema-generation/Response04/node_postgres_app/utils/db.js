@@ -1,8 +1,18 @@
 const { Sequelize } = require('sequelize');
 const config = require('../config/config');
+const env = process.env.NODE_ENV || 'test';
+const dbConfig = config[env];
 // Initialize Sequelize instance
-const sequelize = new Sequelize('postgres', 'postgres', 'password', {
-  host: 'localhost',   // For Docker Compose, use 'postgres'
+/*
+      username: 'ffcpgrds',
+      password: 'admin123',
+      database: 'aurpgs_FOMFOCUCFL_dev_01',
+      host: 'aurpgs-fomfocucfl-dev-e-01.ce70oon0iwlq.us-east-1.rds.amazonaws.com',
+      dialect: 'postgres',
+      port: '5432'
+*/
+const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
+  host: dbConfig.host,   // For Docker Compose, use 'postgres'
   dialect: 'postgres',
   logging: false,      // Disable logging; set to true for detailed logging
 });
