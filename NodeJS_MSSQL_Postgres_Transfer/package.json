@@ -1,0 +1,14 @@
+
+{
+  "name": "mssql-postgres-transfer",
+  "version": "1.0.0",
+  "description": "A NodeJS application to transfer data from MS SQL Server to PostgreSQL",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "pg": "^8.7.1",
+    "mssql": "^7.1.0"
+  }
+}
