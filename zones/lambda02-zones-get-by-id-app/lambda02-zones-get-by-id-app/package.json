@@ -1,0 +1,21 @@
+{
+  "name": "lambda02-zones-get-by-id-app",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.658.1",
+    "@aws-sdk/client-ssm": "^3.658.0",
+    "aws-sdk": "^2.1691.0",
+    "pg": "^8.13.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
