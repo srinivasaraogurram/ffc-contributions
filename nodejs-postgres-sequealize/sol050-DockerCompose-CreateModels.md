@@ -28,9 +28,9 @@ services:
   postgres:
     image: postgres:13
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: flightdb
+      POSTGRES_USER: ffcpgrds
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: aurpgs_FOMFOCUCFL_dev_ffc_01
     ports:
       - "5432:5432"
   pgadmin:
@@ -61,12 +61,19 @@ npx sequelize-cli init
 ```json
 {
   "development": {
-    "username": "user",
-    "password": "password",
-    "database": "flightdb",
-    "host": "127.0.0.1",
+    "username": "ffcpgrds",
+    "password": "admin123",
+    "database": "aurpgs_FOMFOCUCFL_dev_ffc_01",
+    "hostdev": "aurpgs-fomfocucfl-dev-e-ffc-01.ce70oon0iwlq.us-east-1.rds.amazonaws.com"
     "dialect": "postgres"
-  }
+  },
+ "localdocker": {
+    "username": "ffcpgrds",
+    "password": "admin123",
+    "database": "aurpgs_FOMFOCUCFL_dev_ffc_01",
+    "host": "aurpgs-fomfocucfl-dev-e-ffc-01.ce70oon0iwlq.us-east-1.rds.amazonaws.com"
+    "dialect": "postgres"
+  },
 }
 ```
 
